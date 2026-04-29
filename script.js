@@ -82,7 +82,7 @@ function GameController(
 
     const stopGame = () => {
         setTimeout(() => {
-            alert(`${activePlayer.token} won!`);
+            alert(`'${activePlayer.token}' won!`);
             location.reload();
         }, 10);
 
@@ -131,8 +131,10 @@ function GameController(
             }
             if (draw === false) { break };
         }
-        if (draw) { setTimeout(() => alert('draw!'), 10) };
-        return mainDiag || secondDiag || streightWin;
+        if (draw) { 
+            setTimeout(() => { alert('draw!'), 10; location.reload(); });
+        };
+    return mainDiag || secondDiag || streightWin;
     }
 
     return {
